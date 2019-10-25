@@ -2,7 +2,7 @@
 <html>
 
 <head>
-    <title>Great Number Game</title>
+    <title>Great Counter Game</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 </head>
 
@@ -10,6 +10,15 @@
     <div class="bg-dark mr-md-3 pt-3 px-3 pt-md-5 px-md-5 text-center text-white overflow-hidden">
         <div class="my-3 py-3">
             <h2 class="display-4 font-weight-normal">Wellcome to the Great Counter Game!</h2>
+            <h3>The winning number is:
+                <%=message %>
+                    <%=number%>
+                        <% if (replay == 1){%>
+                            <form action='/reset' method="POST">
+                                <button class="form-control" required autofocus>Reset</button>
+                            </form>
+                            <% } %>
+            </h3>
         </div>
         <div class="bg-light shadow-sm mx-auto" style="width: 80%; height: 500px; border-radius: 21px 21px 0 0;">
             <p class="lead" style="color: darkslategrey; padding-top: 50px;">I am thinking of a number between 1 and 100</p>
@@ -19,12 +28,10 @@
                     <input type="number" name="number" class="form-control" required autofocus>
                     <button class="form-control" required autofocus>Submit</button>
                 </form>
-                <form action='/reset'>
-                    <button class="form-control" required autofocus>Reset</button>
-                </form>
+
 
             </div>
-            <h3 style="color:black">the number was:</h3>
+
         </div>
     </div>
     </div>
